@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    .container{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background: #222;
+        input {
+            appearance: none;
+            &:nth-child(1):checked ~ .dots {
+                label:nth-child(1){
+                    opacity: 1;
+                }
+            }
+            &:nth-child(2):checked ~ .dots {
+                label:nth-child(2){
+                    opacity: 1;
+                }
+            }
+            &:nth-child(3):checked ~ .dots {
+                label:nth-child(3){
+                    opacity: 1;
+                }
+            }
+            &:nth-child(4):checked ~ .dots {
+                label:nth-child(4){
+                    opacity: 1;
+                }
+            }
+            &:nth-child(5):checked ~ .dots {
+                label:nth-child(5){
+                    opacity: 1;
+                }
+            }
+            &:nth-child(1):checked ~ .slider {
+                .slide:nth-child(1){
+                    clip-path: circle(150% at 50% 50%);
+                    transition-delay: 1s;
+                    background-position: center;
+                }
+            }
+            &:nth-child(2):checked ~ .slider {
+                .slide:nth-child(2){
+                    clip-path: circle(150% at 50% 50%);
+                    transition-delay: 1s;
+                    background-position: center;
+                }
+            }
+            &:nth-child(3):checked ~ .slider {
+                .slide:nth-child(3){
+                    clip-path: circle(150% at 50% 50%);
+                    transition-delay: 1s;
+                    background-position: center;
+                }
+            }
+            &:nth-child(4):checked ~ .slider {
+                .slide:nth-child(4){
+                    clip-path: circle(150% at 50% 50%);
+                    transition-delay: 1s;
+                    background-position: center;
+                }
+            }
+            &:nth-child(5):checked ~ .slider {
+                .slide:nth-child(5){
+                    clip-path: circle(150% at 50% 50%);
+                    transition-delay: 1s;
+                    background-position: center;
+                }
+            }
+
+        }
+        .dots {
+            position: absolute;
+            bottom: 70px;
+            z-index: 10000;
+            display: flex;
+            gap: 6px;
+            label {
+                width: 20px;
+                height: 20px;
+                background: #fff;
+                cursor: pointer;
+                border-radius: 50%;
+                opacity: 0.5;
+                border: 2px solid #222;
+            }
+        }
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            .slide {
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--img); 
+                background-size: cover;
+                clip-path: circle(0% at 0% 50%);
+                transition: 1.5s;
+                transition-delay: 0s;
+                background-position: left;
+                &:nth-child(even)
+                {
+                    clip-path: circle(0% at 100% 50%);
+                    background-position: right;
+                }
+                .content
+                {
+                    
+                    position: relative;
+                    padding: 50px 50px 190px 80px;
+                    max-width: 550px;
+                    .filter{
+                        backdrop-filter: blur(30px);
+                        box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+                        border: 2px solid rgba(225, 225, 225, 0.18);
+                        padding: 25px;
+                        border-radius: 35px;
+                        h2 {
+                        color: #fff;
+                        font-size: 3em;
+                        
+                    }
+                    p {
+                        color: #fff;
+                    }
+                }
+                }
+            }
+        }
+    }
+}
